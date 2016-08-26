@@ -9,7 +9,7 @@
 #import "GHNetWorkingManager.h"
 #import "AFNetworking.h"
 
-
+#import "MBProgressHUD.h"
 
 #define fUNC_NIL_BLOCK(block,blocks)  \
 if (block) {              \
@@ -91,10 +91,10 @@ blocks;               \
 //    
     // 2.检测是否有网络
     AFNetworkReachabilityStatus net = [AFNetworkReachabilityManager sharedManager].networkReachabilityStatus;
-    if ( net == AFNetworkReachabilityStatusNotReachable) {
+    if ( net == AFNetworkReachabilityStatusReachableViaWiFi) {
         NSError *cancelError = [NSError errorWithDomain:@"没有网络,请检测网络!" code:(-12002) userInfo:nil];
+        NSLog(@"wuwangluo");
         fUNC_NIL_BLOCK(failureBlock , failureBlock(cancelError));
-        NSLog(@"没有网络");
         return nil;
     }
     return  self.sessionMamager;

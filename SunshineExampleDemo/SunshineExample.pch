@@ -9,7 +9,21 @@
 #ifndef SunshineExample_pch
 #define SunshineExample_pch
 
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "Macros.h"
+
+//#if PRODUCT  //产品环境
+//
+////输出转换成DDLog
+//#define NSLog(...) DDLogVerbose(__VA_ARGS__)
+//#define Log(...) DDLogVerbose(__VA_ARGS__)
+//
+//#else   //其它环境
+//
+////输出转换成DDLog
+//#define NSLog(...) DDLogVerbose(__VA_ARGS__)
+//#define Log(...) DDLogVerbose(__VA_ARGS__)
+//
+//#endif
+
 
 #endif /* SunshineExample_pch */
